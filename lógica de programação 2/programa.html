@@ -1,0 +1,30 @@
+<canvas width="600" height="400"></canvas> 
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d'); // pincel 2d
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);//desenhar e preencher um retangulo , precisa das posições iniciais e finais,
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400, 0, 200, 400);
+
+    //desenhar um triangulo
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();//chama esse fução que é o inicio do caminho do pincel
+    pincel.moveTo(300, 200); //topo
+    pincel.lineTo(200, 400);//fazer uma linha //ponta da esquerda
+    pincel.lineTo(400, 400);//fazer uma linha //ponta da direita
+    pincel.fill(); //peço para o pincel preencher
+
+    //desenhando um circulo
+    pincel.fillStyle = 'blue'; 
+    pincel.beginPath(); //sempre colocar pra começar o pincel pra ir de outro lugar
+    pincel.arc(300, 200, 50, 0, 2 * 3.14 ); //posição  x, posição  y, raio, angulo inicial, angulo final em radianos (multiplicado por PI)
+    pincel.fill();
+    
+</script>

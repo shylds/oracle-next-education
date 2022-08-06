@@ -1,0 +1,71 @@
+<canvas width="600"  height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    var cores = ['blue', 'red', 'green'];
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var guardaPosicao = [0, 0];
+    
+    var contador = 1;
+    var tamanho = 0;
+
+    function desenhaCirculo(evento){
+
+        var x = evento.pageX -  tela.offsetLeft; //tira o espaço que fica em branco a esquerda
+        var y = evento.pageY - tela.offsetTop; //tira o espaço que fica em branco a cima
+        
+        guardaPosicao[0] =  x;
+        guardaPosicao[1] = y;
+
+        if(evento.shiftKey){
+            pincel.fillStyle ='blue';
+            pincel.beginPath();
+            pincel.arc(x, y, tamanho = 20, 0, 2 * 3.14);
+            pincel.fill();
+        
+        }else{
+            pincel.fillStyle ='blue';
+            pincel.beginPath();
+            pincel.arc(x, y, tamanho = 10, 0, 2 * 3.14);
+            pincel.fill();
+            
+            
+        }
+        contador = 1;
+
+    }
+
+    tela.onclick = desenhaCirculo; //quando clica na tela
+   
+    
+    function mudaCor(){
+        //alert('funcionou');
+        
+        if(contador < 3){
+
+            //seto as cores com o clique do botão direito do mouse
+            
+            pincel.fillStyle = cores[contador];
+            pincel.beginPath();
+            pincel.arc(guardaPosicao[0], guardaPosicao[1], tamanho, 0, 2 * 3.14);
+            pincel.fill();
+            contador++;
+
+        }
+
+        //seto para voltar a cor azul
+        if(contador==3){
+            contador = 0;
+       }
+
+       return false;
+
+    }
+    //contador = 1;
+    tela.oncontextmenu = mudaCor;
+</script>
