@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+    //função de pular linha
+    function pulaLinha(){
+        document.write("<br>")
+    }
+
+    //função de imprimir na tela
+    function mostrarNaTela(resultado){
+        
+        document.write(resultado);
+        pulaLinha();
+    }
+
+    var contador = 1;
+
+    while( contador <= 100){
+
+        if(contador % 2 == 0){ //usa o resto da divisão
+            mostrarNaTela(contador);
+            contador++;
+        }else{
+            contador++;
+        }
+    }
+    mostrarNaTela("FIM");
+    
+</script>

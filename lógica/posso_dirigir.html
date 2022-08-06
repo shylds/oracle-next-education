@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var idade = parseInt(prompt("Qual é sua idade?"));
+    var temCarteira = prompt("Tem carteira? Responda S ou N");
+
+    if(idade <18){
+        mostra("Você não tem idade para dirigir.");
+    }else{
+        if(idade >=18 && temCarteira == "N"){
+            mostra("Você tem idade para dirigir porém não tem Cnh.");
+        }else{
+            mostra("Você tem idade e cnh então pode dirigir.");
+        }
+    }
+
+</script>

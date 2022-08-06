@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(mensagem){
+        document.write("Passaram " + mensagem + " gerações.");
+        pulaLinha();
+    }
+
+    var idadeMedia = 28;
+    var chegadaNoBrasil = 1500;
+    var anoAtual = 2022;
+    var geracoesSePassaram = (anoAtual - chegadaNoBrasil)/idadeMedia;
+
+    mostra(geracoesSePassaram)
+</script>

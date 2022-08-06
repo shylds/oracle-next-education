@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+function indiceMuscularCorporal(peso, altura){
+    var imc = peso / (altura * altura);
+    //mostra(imc);
+    return imc;
+}
+ //var minhaAltura = 1.62;
+ //var meuPeso = 52;
+ //indiceMuscularCorporal(meuPeso, minhaAltura);
+
+ var meuImc = indiceMuscularCorporal(52, 1.62);
+ var imcDoMeuAmigo = indiceMuscularCorporal(70, 1.80);
+
+ mostra(meuImc);
+ mostra(imcDoMeuAmigo);
+</script>

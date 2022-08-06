@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostraNaTela(mostrar){
+        document.write(mostrar);
+        pulaLinha();
+    }
+    //imprimir numeros ente 30 e 40
+    // se eles forem 33 e 37 não devem ser impressos 
+
+    var numero = 20;
+
+    while(numero >= 0){
+        mostraNaTela(numero);
+        numero--
+    }
+    mostraNaTela("FIM");
+</script>
